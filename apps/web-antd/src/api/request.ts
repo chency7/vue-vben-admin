@@ -57,15 +57,15 @@ function createRequestClient(baseURL: string, options?: RequestClientOptions) {
   }
 
   function formatToken(token: null | string) {
-    return token ? `Bearer ${token}` : null;
+    return token ? `${token}` : null;
   }
 
   // 请求头处理
   client.addRequestInterceptor({
     fulfilled: async (config) => {
       const accessStore = useAccessStore();
-
-      config.headers.Authorization = formatToken(accessStore.accessToken);
+      config.headers['App-Token'] = formatToken(accessStore.accessToken);
+      // config.headers.Authorization = formatToken(accessStore.accessToken);
       config.headers['Accept-Language'] = preferences.app.locale;
       return config;
     },

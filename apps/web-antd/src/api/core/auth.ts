@@ -3,13 +3,15 @@ import { baseRequestClient, requestClient } from '#/api/request';
 export namespace AuthApi {
   /** 登录接口参数 */
   export interface LoginParams {
+    account?: string;
     password?: string;
-    username?: string;
+    captchaKey?: string;
+    captchaCode?: string;
   }
 
   /** 登录接口返回值 */
   export interface LoginResult {
-    accessToken: string;
+    token: string;
   }
 
   export interface RefreshTokenResult {
@@ -38,9 +40,7 @@ export async function refreshTokenApi() {
  * 退出登录
  */
 export async function logoutApi() {
-  return baseRequestClient.post('/auth/logout', {
-    withCredentials: true,
-  });
+  return baseRequestClient.get('/auth/logout');
 }
 
 /**
@@ -51,5 +51,5 @@ export async function logoutApi() {
 // }
 
 export async function getAccessCodesApi() {
-  return 'auth_CC';
+  return ['auth_CC'];
 }
