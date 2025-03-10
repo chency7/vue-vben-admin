@@ -4,7 +4,7 @@ import type { BasicOption } from '@vben/types';
 
 import { computed, markRaw } from 'vue';
 
-import { AuthenticationLogin, SliderCaptcha, z } from '@vben/common-ui';
+import { AuthenticationLoginPrice, SliderCaptcha, z } from '@vben/common-ui';
 import { $t } from '@vben/locales';
 
 import { useAuthStore } from '#/store';
@@ -90,9 +90,14 @@ const formSchema = computed((): VbenFormSchema[] => {
 </script>
 
 <template>
-  <AuthenticationLogin
+  <AuthenticationLoginPrice
     :form-schema="formSchema"
     :loading="authStore.loginLoading"
     @submit="authStore.authLogin"
+    :show-forget-password="false"
+    :show-code-login="false"
+    :show-qrcode-login="false"
+    :show-third-party-login="false"
+    :show-register="false"
   />
 </template>

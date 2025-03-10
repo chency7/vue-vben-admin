@@ -118,7 +118,7 @@ VITE_GLOB_API_URL=https://mock-napi.vben.pro/api
 import { requestClient } from '#/api/request';
 
 export async function getUserInfoApi() {
-  return requestClient.get<UserInfo>('/user/info');
+  return requestClient.get<UserInfo>('/user/getUserInfo');
 }
 ```
 

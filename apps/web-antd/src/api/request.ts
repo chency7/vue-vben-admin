@@ -74,9 +74,9 @@ function createRequestClient(baseURL: string, options?: RequestClientOptions) {
   // 处理返回的响应数据格式
   client.addResponseInterceptor(
     defaultResponseInterceptor({
-      codeField: 'code',
-      dataField: 'data',
-      successCode: 0,
+      codeField: 'status',
+      dataField: 'body',
+      successCode: 200,
     }),
   );
 
@@ -107,7 +107,11 @@ function createRequestClient(baseURL: string, options?: RequestClientOptions) {
 }
 
 export const requestClient = createRequestClient(apiURL, {
+  timeout: 30 * 1000,
   responseReturn: 'data',
+  headers: {
+    'Content-Type': 'multipart/form-data;charset=utf-8',
+  },
 });
 
 export const baseRequestClient = new RequestClient({ baseURL: apiURL });
