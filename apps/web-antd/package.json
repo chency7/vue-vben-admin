@@ -1,18 +1,17 @@
 {
-  "name": "@vben/web-antd",
+  "name": "xxx-web-antd",
   "version": "5.5.9",
-  "homepage": "https://vben.pro",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "homepage": "xxx.com",
+  "bugs": "xxx.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
+    "url": "xxx.git",
     "directory": "apps/web-antd"
   },
   "license": "MIT",
   "author": {
-    "name": "vben",
-    "email": "ann.vben@gmail.com",
-    "url": "https://github.com/anncwb"
+    "name": "xxx",
+    "email": "xxx@xxx.com"
   },
   "type": "module",
   "scripts": {
