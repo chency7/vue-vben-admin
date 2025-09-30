@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
 
+import { SvginfiniteSpinner } from '@vben-core/icons';
 import { cn } from '@vben-core/shared/utils';
 
 interface Props {
@@ -72,11 +73,13 @@ function onTransitionEnd() {
     "
     @transitionend="onTransitionEnd"
   >
-    <div
+    <SvginfiniteSpinner width="90" color="red" />
+    <div>加载中...</div>
+    <!-- <div
       :class="{ paused: !renderSpinner }"
       v-if="renderSpinner"
       class="loader before:bg-primary/50 after:bg-primary relative size-12 before:absolute before:left-0 before:top-[60px] before:h-[5px] before:w-12 before:rounded-[50%] before:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-full after:rounded after:content-['']"
-    ></div>
+    ></div> -->
   </div>
 </template>
 

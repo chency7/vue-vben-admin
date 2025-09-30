@@ -2,6 +2,8 @@ import { defineComponent, h } from 'vue';
 
 import { Icon } from '@iconify/vue';
 
+import './load';
+
 function createIconifyIcon(icon: string) {
   return defineComponent({
     name: `Icon-${icon}`,
